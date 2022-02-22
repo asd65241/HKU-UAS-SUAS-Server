@@ -24,28 +24,28 @@ RUN mkdir -p /var/www/media/objects && \
     chown -R www-data /var/www
 
 # Install server Python requirements.
-COPY server/config/requirements.txt config/requirements.txt
+COPY config/requirements.txt config/requirements.txt
 RUN pip3 install -r config/requirements.txt
 
 # Install server JS requirements.
-COPY server/config/npm.txt config/npm.txt
+COPY config/npm.txt config/npm.txt
 RUN cat config/npm.txt | xargs sudo npm install -g
 
 # Configure web server.
-COPY server/config/nginx.conf /etc/nginx/sites-enabled/default
+COPY config/nginx.conf /etc/nginx/sites-enabled/default
 RUN sudo mkdir -p /var/log/uwsgi
 
 # Compile static assets.
-COPY server/manage.py manage.py
-COPY server/server server
-COPY server/auvsi_suas/__init__.py auvsi_suas/__init__.py
-COPY server/auvsi_suas/models/__init__.py auvsi_suas/models/__init__.py
-COPY server/auvsi_suas/views/__init__.py auvsi_suas/views/__init__.py
-COPY server/auvsi_suas/frontend auvsi_suas/frontend
+COPY manage.py manage.py
+COPY server server
+COPY auvsi_suas/__init__.py auvsi_suas/__init__.py
+COPY auvsi_suas/models/__init__.py auvsi_suas/models/__init__.py
+COPY auvsi_suas/views/__init__.py auvsi_suas/views/__init__.py
+COPY auvsi_suas/frontend auvsi_suas/frontend
 RUN ./manage.py collectstatic --noinput
 
 # Copy all remaining code.
-COPY server/ .
+COPY  .
 
 # Compile protobuf definitions.
 COPY proto auvsi_suas/proto
