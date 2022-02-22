@@ -1,5 +1,5 @@
 FROM ubuntu:20.04
-WORKDIR /interop/server
+WORKDIR /HKUUAS-SUAS-Server
 
 # Set the time zone to the competition time zone.
 RUN ln -sf /usr/share/zoneinfo/America/New_York /etc/localtime
