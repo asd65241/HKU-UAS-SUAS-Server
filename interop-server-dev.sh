@@ -8,7 +8,7 @@ REPO=${SERVER}/..
 set -e
 
 # Run commands from context of server directory.
-cd $SERVER
+# cd $SERVER
 
 # Checks the health of everything.
 if [ "$1" == "healthcheck" ]
