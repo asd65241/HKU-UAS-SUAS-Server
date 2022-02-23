@@ -6,8 +6,6 @@ services:
     environment:
         POSTGRES_USER: postgres
         POSTGRES_PASSWORD: postgres
-        VIRTUAL_HOST: "hkuuas-suas.mysgapp.co"
-        LETSENCRYPT_HOST: "hkuuas-suas.mysgapp.co"
     volumes:
       - ./volumes/var/lib/postgresql/data:/var/lib/postgresql/data
     healthcheck:
@@ -23,6 +21,9 @@ services:
       cache_from:
         - auvsisuas/interop-server:latest
     image: auvsisuas/interop-server
+    environment:
+        VIRTUAL_HOST: "hkuuas-suas.mysgapp.co"
+        LETSENCRYPT_HOST: "hkuuas-suas.mysgapp.co"
     volumes:
       - ./volumes/mount:/mount
       - ./volumes/logs/uwsgi:/var/log/uwsgi
