@@ -45,7 +45,7 @@ COPY auvsi_suas/frontend auvsi_suas/frontend
 RUN ./manage.py collectstatic --noinput
 
 # Copy all remaining code.
-COPY . .
+COPY ./ ./
 
 # Compile protobuf definitions.
 COPY proto auvsi_suas/proto
