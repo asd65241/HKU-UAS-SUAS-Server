@@ -45,6 +45,20 @@ sudo ./interop-server.sh up
 
 The server will run until stopped using `Ctrl-C`.
 
+```bash
+sudo ./interop-server.sh up_d
+```
+
+The server will run in detech mode, and stop on 'down'.
+
+
+```bash
+sudo ./interop-server.sh down
+```
+
+For deteched mode, stop the server using the above command.
+
+
 ### View Server Log
 
 Logs are also available via volumes on the host computer under
