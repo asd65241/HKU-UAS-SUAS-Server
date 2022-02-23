@@ -19,7 +19,7 @@ services:
   interop-server:
     build:
       context: ../
-      dockerfile: server/Dockerfile
+      dockerfile: Dockerfile
       cache_from:
         - auvsisuas/interop-server:latest
     image: auvsisuas/interop-server
