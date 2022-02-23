@@ -18,8 +18,8 @@ services:
       - "net"
   interop-server:
     build:
-      context: ../
-      dockerfile: HKUUAS-SUAS-Server/Dockerfile
+      context: .
+      dockerfile: Dockerfile
       cache_from:
         - auvsisuas/interop-server:latest
     image: auvsisuas/interop-server
