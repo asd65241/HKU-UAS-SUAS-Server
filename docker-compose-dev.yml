@@ -15,7 +15,7 @@ services:
   interop-server:
     build:
       context: ../
-      dockerfile: HKU-SUAS-Server/Dockerfile
+      dockerfile: HKUUAS-SUAS-Server/Dockerfile
       cache_from:
         - auvsisuas/interop-server:latest
     image: auvsisuas/interop-server
