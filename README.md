@@ -10,7 +10,7 @@ The Interoperability System is released to teams as Docker images and Docker Com
 Gitclone the current Git repo.
 
 ```bash
-git clone https://github.com/asd65241/HKUUAS-SUAS-Server.git && cd HKUUAS-SUAS-Server
+git clone https://github.com/asd65241/HKU-UAS-SUAS-Server.git && cd HKUUAS-SUAS-Server
 ```
 
 Create the interop server's database.
